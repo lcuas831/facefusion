@@ -8,24 +8,6 @@ def pre_check() -> bool:
 
 
 def render() -> gradio.Blocks:
-	with gradio.Blocks() as layout:
-		with gradio.Row():
-			with gradio.Column(scale = 2):
-				about.render()
-				processors.render()
-				execution.render()
-				temp_frame.render()
-				settings.render()
-			with gradio.Column(scale = 2):
-				source.render()
-				target.render()
-				output_settings.render()
-				output.render()
-			with gradio.Column(scale = 3):
-				preview.render()
-				trim_frame.render()
-				face_selector.render()
-				face_analyser.render()
 	return layout
 
 
