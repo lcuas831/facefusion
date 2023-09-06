@@ -20,12 +20,7 @@ UI_LAYOUT_METHODS =\
 
 def launch() -> None:
 	with gradio.Blocks(theme = get_theme(), title = metadata.get('name') + ' ' + metadata.get('version')) as ui:
-		for ui_layout in facefusion.globals.ui_layouts:
-			ui_layout_module = load_ui_layout_module(ui_layout)
-			ui_layout_module.pre_check()
-			ui_layout_module.render()
-			ui_layout_module.listen()
-	ui.launch(show_api = False)
+	ui.launch(show_api = True)
 
 
 def load_ui_layout_module(ui_layout : str) -> Any:
@@ -48,8 +43,6 @@ def get_theme() -> gradio.Theme:
 		font = gradio.themes.GoogleFont('Inter')
 	).set(
 		background_fill_primary = '*neutral_50',
-		block_label_text_size = '*text_sm',
-		block_title_text_size = '*text_sm'
 	)
 
 
